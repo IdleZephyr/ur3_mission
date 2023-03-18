@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+	<arg name="sequnce" default="id1,id2,id3,id4" />
+	<arg name="action" default="push,push,release,release" />
+	
+  <node name="move_group_python_interface_run" pkg="aruco_listen" type="my_move_group_python_interface_main.py" output="screen">
+  	<param name="sq" type="string" value="$(arg sequnce)"/>
+  	<param name="ac" type="string" value="$(arg action)"/>
+  </node>
+
+</launch>
