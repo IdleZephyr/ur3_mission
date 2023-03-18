@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <arg name="Use_rviz" default="True" />
+     
+    <include file="$(find aruco_detector_ocv)/launch/detector_ur3.launch">
+    	<arg name="use_rviz" value="False" />
+    </include>
+
+   <group if="$(arg Use_rviz)" >
+        <node pkg="rviz" type="rviz" name="markers_extrinsic" args="-d $(find aruco_listen)/config/ar_eyehand.rviz"/>
+    </group>
+    
+</launch>

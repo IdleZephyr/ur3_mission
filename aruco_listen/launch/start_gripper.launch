@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+	
+  <node name="robotiq_2f_gripper" pkg="robotiq_2f_gripper_control" type="Robotiq2FGripperRtuNode.py" output="screen" args="/dev/ttyUSB0"/>
+  
+
+</launch>

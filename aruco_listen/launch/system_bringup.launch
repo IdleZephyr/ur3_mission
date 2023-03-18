@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+   <arg name="arm" default="True" />
+   <arg name="cam" default="True" />
+   <arg name="gripper" default="True" />
+   
+   <group if="$(arg arm)" >
+        <include file="$(find aruco_listen)/launch/start_ur3+2f140.launch">
+    </include>
+   </group>
+   
+   <group if="$(arg arm)" >
+        <node name="robotiq_2f_gripper" pkg="robotiq_2f_gripper_control" type="Robotiq2FGripperRtuNode.py" output="screen" args="/dev/ttyUSB0"/>
+   </group>
+    
+   <group if="$(arg arm)" >
+        <include file="$(find aruco_listen)/launch/start_cam.launch">
+    </include>
+   </group>
+   
+    
+</launch>

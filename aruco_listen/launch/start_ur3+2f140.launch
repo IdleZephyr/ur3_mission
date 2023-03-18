@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <include file="$(find ur_robot_driver)/launch/ur3_bringup.launch">
+    <arg name="robot_ip" value="192.168.0.100" />
+    <arg name="kinematics_config" value="/home/seph/ur3_ws/src/Universal_Robots_ROS_Driver/ur_calibration/etc/ex-ur3_calibration.yaml" />
+    </include>
+    
+    <include file="$(find ur3_2f_moveit_config)/launch/my_move_group.launch">
+    <arg name="load_robot_description" value="true" />
+    <arg name="moveit_controller_manager" value="simple" />
+    <arg name="use_rviz" default="false" />
+    </include>
+    
+</launch>
